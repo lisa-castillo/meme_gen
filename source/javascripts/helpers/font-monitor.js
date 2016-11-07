@@ -22,7 +22,7 @@ MEME.waitForFonts = function(callback) {
     el.style.position = 'absolute';
     el.style.left = el.style.top = '-10000px';
     el.style.fontSize = '300px';
-    el.style.fontFamily = 'sans-serif';
+    el.style.fontFamily = 'SharpUnity-Extrabold';
     el.style.fontVariant = 'normal';
     el.style.fontStyle = 'normal';
     el.style.fontWeight = 'normal';
@@ -59,7 +59,7 @@ MEME.waitForFonts = function(callback) {
   for (var i=0; i < fonts.length; i++) {
     pendingFonts.push(new PendingFont(fonts[i]));
   }
-  
+
   testFonts();
   return deferred.promise();
 };
