@@ -1,0 +1,63 @@
+var MEME_SETTINGS = {
+  creditText: 'Optional Bottom Text', // Default 'credits' text.
+  creditSize: 12, // Font size for credit text.
+  downloadName: 'meme', // The name of the downloaded image file (will have a '.png' extension added).
+  fontColor: 'white', // Universal font color.
+
+  // Universal font family for texts:
+  // Note that you'll need to included quoted font names as you would in CSS, ie: ''Knockout 28 B''.
+  fontFamily: 'SharpUnity-Extrabold',
+  // Font family options: set to empty array to disable font selector.
+  // These options may also be formatted as {text:'Knockout', value:''Knockout 28 B''}.
+  //fontFamilyOpts: ['Arial', 'Helvetica Neue', 'Comic Sans MS'],
+  fontFamilyOpts: ['SharpUnity-Extrabold', 'SharpUnity-Semibold', 'Helvetica Neue', 'Arial'],
+  // Font size of main headline:
+  fontSize: 36,
+  // Font size options: set to empty array to disable font-size selector.
+  fontSizeOpts: [
+    {text: 'Small text', value: 14},
+    {text: 'Medium text', value: 24},
+    {text: 'Large text', value: 36}
+  ],
+
+  headlineText: 'Write your own headline', // Default headline text.
+  height: 378, // Canvas rendering height.
+  imageScale: 1, // Background image scale.
+  imageSrc: '', // Default background image path. MUST reside on host domain, or use base64 data.
+  overlayAlpha: 0.5, // Opacity of image overlay.
+
+  // Image overlay color, or blank ('') for no overlay:
+  overlayColor: '#0C5AB5',
+  // Overlay color options: set to empty array to disable overlay options selector.
+  overlayColorOpts: ['#0C5AB5', '#E10C32', '#1CACE1', '#000000', '#FFFFFF'],
+  paddingRatio: 0.05, // Percentage of canvas width to use as edge padding.
+
+  // Text alignment: valid settings are 'left', 'center', and 'right'.
+  textAlign: 'left',
+  // Text alignment options: set to empty array to disable alignment picker.
+  textAlignOpts: [
+    {text: 'Align left', value: 'left'},
+    {text: 'Align center', value: 'center'},
+    {text: 'Align right', value: 'right'}
+  ],
+
+  textShadow: false, // Text shadow toggle.
+  textShadowEdit: false, // Toggles text shadow control within the editor.
+  watermarkAlpha: 1, // Opacity of watermark image.
+  watermarkMaxWidthRatio: 0.25, // Maximum allowed width of watermark (percentage of total canvas width).
+
+  // Path to the watermark image source, or blank for no watermark:
+  // Alternatively, use '<%= asset_data_uri('vox.png') %>' to populate the watermark with base64 data, avoiding Cross-Origin issues.
+  watermarkSrc: (localStorage && localStorage.getItem('meme_watermark')) || '<%= image_path('hrc-logo-white.png') %>',
+
+  // Watermark image options: set to empty array to disable watermark picker.
+  // NOTE: only populate the 'data' attributes with base64 data when concerned about Cross-Origin requests...
+  // Otherwise, just leave 'data' attributes blank and allow images to load from your server.
+  watermarkOpts: [
+    {text: "White", value: '<%= image_path('hrc-logo-white.png') %>', data: '<%= asset_data_uri('hrc-logo-white.png') %>'},
+    {text: "Teal", value: '<%= image_path('hrc-logo-teal.png') %>', data: '<%= asset_data_uri('hrc-logo-teal.png') %>'},
+    {text: 'Red & Blue', value: '<%= image_path('hrc-logo-red-blue.png') %>', data: '<%= asset_data_uri('hrc-logo-red-blue.png') %>'}
+  ],
+
+  width: 755 // Canvas rendering width.
+};
